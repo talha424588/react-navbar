@@ -7,12 +7,16 @@ import search_icon_black from '../assets/search-b.png'
 import toggle_icon_light from '../assets/day.png' 
 import toggle_icon_black from '../assets/night.png' 
 import { useState } from 'react';
-function Navbar()
+function Navbar({theme,setTheme})
 {
+    const toogle_mode = () =>
+    {
+        theme === "light" ? setTheme("dark") : setTheme("light");
+    }
     return (
     <>
         <div className="navbar">
-            <img src={logo_black} alt="" className='logo'/>
+            <img src={theme === "light" ? logo_black : logo_light} alt="" className='logo'/>
             <ul>
                 <li>Home</li>
                 <li>Product</li>
@@ -21,9 +25,14 @@ function Navbar()
             </ul>
             <div className="search-box">
                 <input type="text" placeholder="Search" />
-                <img src={search_icon_light} alt="" placeholder="search" />
+                <img src={theme === "light" ? search_icon_light : search_icon_black} alt="" placeholder="search" />
             </div>
-            <img src={toggle_icon_black} alt="toggle-u"  className='toggle-icon'/>
+            {
+                theme === "light"?
+                <img src={toggle_icon_black} alt="toggle-u"  className='toggle-icon' onClick={toogle_mode}/>
+                :
+                <img src={toggle_icon_light} alt="toggle-u"  className='toggle-icon' onClick={toogle_mode}/>
+            }
         </div>
     </>
     )

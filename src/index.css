@@ -11,3 +11,7 @@
   height: 100vh;
   background: #ced8ff;
 }
+.container.dark
+{
+  background: #222;
+}
