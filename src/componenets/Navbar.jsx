@@ -11,14 +11,13 @@ function Navbar()
     return (
     <>
         <div className="navbar">
-            <img src={logo_black} alt="" />
+            <img src={logo_black} alt="" className='logo'/>
             <ul>
                 <li>Home</li>
                 <li>Product</li>
                 <li>Feature</li>
                 <li>About</li>
             </ul>
-
             <div className="search-box">
                 <input type="text" placeholder="Search" />
                 <img src={search_icon_black} alt="" srcset="" />
