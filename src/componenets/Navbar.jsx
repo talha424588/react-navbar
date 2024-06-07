@@ -6,6 +6,7 @@ import search_icon_light from '../assets/search-w.png'
 import search_icon_black from '../assets/search-b.png' 
 import toggle_icon_light from '../assets/day.png' 
 import toggle_icon_black from '../assets/night.png' 
+import { useState } from 'react';
 function Navbar()
 {
     return (
@@ -20,9 +21,9 @@ function Navbar()
             </ul>
             <div className="search-box">
                 <input type="text" placeholder="Search" />
-                <img src={search_icon_black} alt="" srcset="" />
+                <img src={search_icon_light} alt="" placeholder="search" />
             </div>
-            <img src={toggle_icon_black} alt="toggle-button" />
+            <img src={toggle_icon_black} alt="toggle-u"  className='toggle-icon'/>
         </div>
     </>
     )
